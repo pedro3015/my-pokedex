@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <main>
+      <nav class="buscador">
+        <form class="contenedor-buscador">
+          <select name="buscadorTipo" id="buscadorTipo">
+            <option value="nombre">Name</option>
+            <option value="tipo">Type</option>
+          </select>
+          <input
+            type="search"
+            name="buscadorNombre"
+            id="buscadorNombre"
+            placeholder="Enter a name or a type"
+          />
+        </form>
+      </nav>
+      <section class="pokedex"></section>
+    </main>
+    <footer class="footer">
+      <p>
+        &copy Developed by Pedro Alvarez using
+        <a href="http://pokeapi.co" target="_blank">PokeApi</a>
+      </p>
+    </footer>
+  </body>
+  <script src="./js/main.js" type="module"></script>
+</html>
