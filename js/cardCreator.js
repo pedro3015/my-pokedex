@@ -1,7 +1,8 @@
 import { numberId, capitalizador, mayus } from "./utilitys.js";
 
-export function cardCreator(data) {
+export function cardCreator(data, isLCP = false) {
   let card = document.createElement("article");
+  const priority = isLCP ? "high" : "auto";
   card.className = "card-pokedex";
   card.innerHTML = `
     <header class="card-header">
@@ -11,7 +12,7 @@ export function cardCreator(data) {
           <figure class="card-image">
             <img src="${
               data.sprites.other["official-artwork"].front_default
-            }" alt="imagen-de-pokemon" id="imagen-pokemon" loading="lazy" />
+            }" alt="imagen-de-pokemon" id="imagen-pokemon" loading="lazy" fetchpriority="${priority}"/>
           </figure>
   `;
 
