@@ -37,10 +37,22 @@ buscador.addEventListener("input", async (e) => {
 });
 
 async function mostrarPokemon() {
-  for (let index = 1; index < 12 + 1; index++) {
-    const pokedata = await obtenerDatosPokemon(index);
-    const cardElement = cardCreator(pokedata);
-    pokemonCard.appendChild(cardElement);
+  const fetchPromises = [];
+  for (let index = 1; index <= 12; index++) {
+    fetchPromises.push(obtenerDatosPokemon(index));
+  }
+
+  try {
+    const allPokedata = await Promise.all(fetchPromises);
+
+    allPokedata.forEach((pokedata) => {
+      if (pokedata) {
+        const cardElement = cardCreator(pokedata);
+        pokemonCard.appendChild(cardElement);
+      }
+    });
+  } catch (error) {
+    console.error("Error al cargar la lista inicial de Pokémon:", error);
   }
 }
 
