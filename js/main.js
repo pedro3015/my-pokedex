@@ -37,10 +37,27 @@ buscador.addEventListener("input", async (e) => {
 });
 
 async function mostrarPokemon() {
-  for (let index = 1; index < 12 + 1; index++) {
-    const pokedata = await obtenerDatosPokemon(index);
-    const cardElement = cardCreator(pokedata);
-    pokemonCard.appendChild(cardElement);
+  const fetchPromises = [];
+  for (let index = 1; index <= 12; index++) {
+    fetchPromises.push(obtenerDatosPokemon(index));
+  }
+
+  try {
+    const allPokedata = await Promise.all(fetchPromises);
+
+    allPokedata.forEach((pokedata, index) => {
+      if (pokedata) {
+        // Si el índice es 0 (el primer Pokémon), es el LCP
+        const isLCP = index === 0;
+
+        // Pasamos el nuevo argumento a cardCreator
+        const cardElement = cardCreator(pokedata, isLCP);
+
+        pokemonCard.appendChild(cardElement);
+      }
+    });
+  } catch (error) {
+    console.error("Error al cargar la lista inicial de Pokémon:", error);
   }
 }
 
