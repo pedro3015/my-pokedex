@@ -8,7 +8,7 @@ export function cardCreator(data) {
   card.innerHTML = `
     <header class="card-header">
             <h2 id="nombre-pokemon">${capitalizador(data.name)}</h2>
-            <p id="nombre-pokemon">#${numberId(data.id)}</p>
+            <p id="id-pokemon">#${numberId(data.id)}</p>
           </header>
           <figure class="card-image">
             <img src="${
