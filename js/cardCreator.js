@@ -3,6 +3,7 @@ import { numberId, capitalizador, mayus } from "./utilitys.js";
 export function cardCreator(data, isLCP = false) {
   let card = document.createElement("article");
   const priority = isLCP ? "high" : "auto";
+  const lazyLoading = isLCP ? "eager" : "lazy";
   card.className = "card-pokedex";
   card.innerHTML = `
     <header class="card-header">
@@ -12,7 +13,7 @@ export function cardCreator(data, isLCP = false) {
           <figure class="card-image">
             <img src="${
               data.sprites.other["official-artwork"].front_default
-            }" alt="imagen-de-pokemon" id="imagen-pokemon" loading="lazy" fetchpriority="${priority}"/>
+            }" alt="imagen-de-pokemon" id="imagen-pokemon" loading="${lazyLoading}" fetchpriority="${priority}"/>
           </figure>
   `;
 
