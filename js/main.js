@@ -48,7 +48,7 @@ async function mostrarPokemon() {
     allPokedata.forEach((pokedata, index) => {
       if (pokedata) {
         // Si el índice es 0 (el primer Pokémon), es el LCP
-        const isLCP = "high";
+        const isLCP = index === 1;
 
         // Pasamos el nuevo argumento a cardCreator
         const cardElement = cardCreator(pokedata, isLCP);
