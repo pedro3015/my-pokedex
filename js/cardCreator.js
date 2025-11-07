@@ -13,7 +13,7 @@ export function cardCreator(data) {
           <figure class="card-image">
             <img src="${
               data.sprites.other["official-artwork"].front_default
-            }" alt="imagen-de-pokemon" id="imagen-pokemon" />
+            }" alt="imagen-de-pokemon" id="imagen-pokemon" loading="lazy" />
           </figure>
   `;
 
