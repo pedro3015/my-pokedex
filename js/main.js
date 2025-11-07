@@ -24,21 +24,23 @@ buscador.addEventListener("input", async (e) => {
     });
     for (const nombre of pokeNombres) {
       const data = await obtenerDatosPokemon(nombre);
-      cardCreator(data);
+      const cardElement = cardCreator(data);
+      pokemonCard.appendChild(cardElement);
     }
     return;
   }
 
   const data = await obtenerDatosPokemon(buscadorNombre);
   pokemonCard.innerHTML = "";
-  console.log(data);
-  cardCreator(data);
+  const cardElement = cardCreator(data);
+  pokemonCard.appendChild(cardElement);
 });
 
 async function mostrarPokemon() {
   for (let index = 1; index < 12 + 1; index++) {
     const pokedata = await obtenerDatosPokemon(index);
-    cardCreator(pokedata);
+    const cardElement = cardCreator(pokedata);
+    pokemonCard.appendChild(cardElement);
   }
 }
 

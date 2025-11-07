@@ -1,7 +1,5 @@
 import { numberId, capitalizador, mayus } from "./utilitys.js";
 
-const pokemonCard = document.querySelector(".pokedex");
-
 export function cardCreator(data) {
   let card = document.createElement("article");
   card.className = "card-pokedex";
@@ -40,5 +38,5 @@ export function cardCreator(data) {
 
   card.appendChild(cardContent);
 
-  pokemonCard.appendChild(card);
+  return card;
 }
