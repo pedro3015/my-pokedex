@@ -1,7 +1,146 @@
+:root {
+  --steel: #60a1b8;
+  --light-steel: #afd0db;
+  --water: #2980ef;
+  --light-water: #94bff7;
+  --bug: #91a119;
+  --light-bug: #c8d08c;
+  --dragon: #5060e1;
+  --light-dragon: #a7aff0;
+  --electric: #fac000;
+  --light-electric: #fcdf7f;
+  --ghost: #704170;
+  --light-ghost: #b7a0b7;
+  --fire: #e62829;
+  --light-fire: #f29394;
+  --fairy: #ef70ef;
+  --light-fairy: #f7b7f7;
+  --ice: #3fd8ff;
+  --light-ice: #9febff;
+  --fighting: #ff8000;
+  --light-fighting: #ffbf7f;
+  --normal: #9fa19f;
+  --light-normal: #cfd0cf;
+  --grass: #3fa129;
+  --light-grass: #9fd094;
+  --psychic: #ef4179;
+  --light-psychic: #f7a0bc;
+  --rock: #afa981;
+  --light-rock: #d7d4c0;
+  --dark: #50413f;
+  --light-dark: #a7a09f;
+  --ground: #915121;
+  --light-ground: #c8a890;
+  --poison: #9141cb;
+  --light-poison: #c8a0e5;
+  --flying: #81b9ef;
+  --light-flying: #c0dcf7;
+  --bird: #3f3f3f;
+  --light-bird: #9f9f9f;
+  --unknown: #6ba294;
+  --light-unknown: #b5d0c9;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+main {
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
+}
+
+.contenedor-buscador {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#buscadorTipo {
+  font-size: 2.2rem;
+  padding: 0.5rem;
+}
+#buscadorTipo > option {
+  font-size: 1.6rem;
+}
+
+#buscadorNombre {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 2.2rem;
+  padding: 0.5rem;
+}
+
+@media (width > 900px) {
+  .pokedex {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 2rem;
+    max-width: 100vw;
+  }
+
+  .card-pokedex:hover {
+    transform: scale(1.2);
+  }
+
+  #buscadorNombre {
+    width: 50%;
+  }
+}
+
 .card-pokedex {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+  background-color: #fff;
   transition: transform 0.5s ease;
 }
 
-.card-pokedex:hover {
-  transform: scale(1.2);
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0.5rem;
+}
+
+.card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image img {
+  max-height: 50%;
+  max-width: 50%;
+}
+
+.card-pokedex > .card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.type {
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  width: 12rem;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.footer {
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
+  text-align: center;
 }
